@@ -13,3 +13,37 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    margin: 1em;
+    background: lightblue;
+
+    font-family: Sans-Serif;
+}
+
+.card-column {
+    background: lightGrey;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.card-column-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+
+.card {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.card details > summary {
+    font-weight: bold;
+    list-style: none;
+}
+
+.card details summary::-webkit-details-marker {
+    display:none;
+}
