@@ -12,11 +12,14 @@
       </div>
     <% end %>
 
-    <div class="card-column-name">
-      <%= form.text_field :title %>
+    <div class="card-column-header">
+      <div class="card-column-name">
+        <%= form.text_field :title %>
+      </div>
+      <div class="card-column-actions">
+        <%= button_to "X", card_columns_path %>
+      </div>
     </div>
-    <div>
       <%= form.submit %>
-    </div>
   <% end %>
 </div>

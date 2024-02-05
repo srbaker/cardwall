@@ -34,13 +34,21 @@ body {
     width: 20vw;
 }
 
-.card-column-name {
+.card-column-header {
+    display: flex;
+}
+
+.card-column-header .card-column-name {
     font-size: 1.2rem;
     font-weight: bold;
     padding-bottom: 0.75rem;
 }
 
-.card-column-name input {
+.card-column-header .card-column-actions {
+    padding-bottom: 0.75rem;
+}
+
+.card-column-header .card-column-name input[type=text] {
     background: lightgray;
     border: 0;
     font-size: 1.2rem;

@@ -1,5 +1,10 @@
 <div class="card-column" id="<%= dom_id card_column %>">
-  <div class="card-column-name">
-    <%= card_column.title %>
+  <div class="card-column-header">
+    <div class="card-column-name">
+      <%= card_column.title %>
+    </div>
+    <div class="card-column-actions">
+      <%= button_to "X", card_column_path(card_column), method: :delete %>
+    </div>
   </div>
 </div>
