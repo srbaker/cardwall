@@ -20,7 +20,7 @@ class CardColumnsControllerTest < ActionDispatch::IntegrationTest
       post card_columns_url, params: { card_column: { title: @card_column.title } }
     end
 
-    assert_redirected_to card_column_url(CardColumn.last)
+    assert_redirected_to card_columns_url
   end
 
   test "should show card_column" do
