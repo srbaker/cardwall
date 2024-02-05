@@ -25,7 +25,7 @@ class CardColumnsController < ApplicationController
 
     respond_to do |format|
       if @card_column.save
-        format.html { redirect_to card_column_url(@card_column), notice: "Card column was successfully created." }
+        format.html { redirect_to card_columns_url, notice: "Card column was successfully created.", data: { turbo: false } }
         format.json { render :show, status: :created, location: @card_column }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -58,13 +58,14 @@ class CardColumnsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_card_column
-      @card_column = CardColumn.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def card_column_params
-      params.require(:card_column).permit(:title)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_card_column
+    @card_column = CardColumn.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def card_column_params
+    params.require(:card_column).permit(:title)
+  end
 end
