@@ -1,0 +1,2 @@
+class CardColumn < ApplicationRecord
+end

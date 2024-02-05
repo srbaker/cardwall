@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Card columns</h1>
+
+<div id="card_columns">
+  <% @card_columns.each do |card_column| %>
+    <%= render card_column %>
+    <p>
+      <%= link_to "Show this card column", card_column %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New card column", new_card_column_path %>
