@@ -5,5 +5,7 @@
   <% @card_columns.each do |card_column| %>
     <%= render card_column %>
   <% end %>
-  <%= link_to "+", new_card_column_path %>
+  <%= turbo_frame_tag :new_card_column do %>
+    <%= link_to "+", new_card_column_path, data: { turbo_frame: :new_card_column } %>
+  <% end %>
 </div>
