@@ -1,17 +1,6 @@
-<div id="<%= dom_id card %>">
-  <p>
-    <strong>Card column:</strong>
-    <%= card.card_column_id %>
-  </p>
-
-  <p>
-    <strong>Title:</strong>
-    <%= card.title %>
-  </p>
-
-  <p>
-    <strong>Body:</strong>
+<div id="<%= dom_id card %>" class="card">
+  <details>
+    <summary><%= card.title %></summary>
     <%= card.body %>
-  </p>
-
+  </details>
 </div>
