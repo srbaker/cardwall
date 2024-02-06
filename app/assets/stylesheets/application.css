@@ -19,7 +19,7 @@ body {
     background: rgb(0,212,255);
     background: linear-gradient(180deg, rgba(0,212,255,1) 0%, rgba(64,64,189,1) 100%) no-repeat;
     font-family: Sans-Serif;
-    height: 100vh;
+    height: 100%;
 }
 
 .card-wall {
@@ -27,7 +27,9 @@ body {
 }
 
 .card-column {
-    background: lightgray;
+    background: #efefef;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, .2);
     border-radius: 1rem;
     padding: 1rem;
     margin: 0rem 1rem 0rem 0rem;
@@ -79,8 +81,9 @@ body {
 }
 
 .project-card {
-    background: white;
+    background: lightcyan;
     border-radius: 0.5rem;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, .2);
     padding: 0.5rem;
     margin-top: 0.5rem;
 }
