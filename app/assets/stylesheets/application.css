@@ -41,7 +41,6 @@ body {
 .card-column-header .card-column-name {
     font-size: 1.2rem;
     font-weight: bold;
-    padding-bottom: 0.75rem;
 }
 
 .card-column-header .card-column-actions {
@@ -58,7 +57,8 @@ body {
 .card {
     background: white;
     border-radius: 0.5rem;
-    padding: 1rem;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .card details > summary {
