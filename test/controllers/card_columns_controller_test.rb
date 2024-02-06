@@ -17,7 +17,7 @@ class CardColumnsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create card_column" do
     assert_difference("CardColumn.count") do
-      post card_columns_url, params: { card_column: { title: @card_column.title } }
+      post card_columns_url, params: { card_column: { project_id: projects(:one).id, title: @card_column.title } }
     end
 
     assert_redirected_to card_columns_url

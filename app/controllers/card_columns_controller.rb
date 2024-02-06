@@ -66,6 +66,6 @@ class CardColumnsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def card_column_params
-    params.require(:card_column).permit(:title)
+    params.require(:card_column).permit(:title, :project_id)
   end
 end
