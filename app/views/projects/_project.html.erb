@@ -1,12 +1,7 @@
 <div id="<%= dom_id project %>">
-  <p>
-    <strong>Title:</strong>
-    <%= project.title %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= project.description %>
-  </p>
-
+  <h1><%= project.title %></h1>
+  <%# project.description %>
+  <div id="card_columns" class="card-wall">
+    <%= render project.card_columns %>
+  </div>
 </div>
