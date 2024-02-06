@@ -1,13 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
 <div id="projects" class="project">
-  <% @projects.each do |project| %>
-    <div id="<%= dom_id project %>" class="project-card">
-      <details>
-        <summary><%= link_to project.title, project_path(project) %></summary>
-        <%= project.description %>
-      </details>
-    </div>
+  <%= turbo_frame_tag "projects" do %>
+    <% @projects.each do |project| %>
+      <div id="<%= dom_id project %>" class="project-card">
+        <details>
+          <summary><%= link_to project.title, project_path(project), data: { turbo_frame: "_top" } %></summary>
+          <%= project.description %>
+        </details>
+      </div>
+    <% end %>
   <% end %>
 </div>
 
