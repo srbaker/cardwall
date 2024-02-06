@@ -1,6 +1,6 @@
 <div id="<%= dom_id card %>" class="card">
   <details>
-    <summary><%= card.title %></summary>
+    <summary><%= card.title %> <%= card.body.blank? ? "" : "📄" %></summary>
     <%= card.body %>
   </details>
 </div>
