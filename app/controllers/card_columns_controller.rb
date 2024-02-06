@@ -1,11 +1,6 @@
 class CardColumnsController < ApplicationController
   before_action :set_card_column, only: %i[ show edit update destroy ]
 
-  # GET /card_columns or /card_columns.json
-  def index
-    @card_columns = CardColumn.all
-  end
-
   # GET /card_columns/1 or /card_columns/1.json
   def show
   end

@@ -5,11 +5,6 @@ class CardColumnsControllerTest < ActionDispatch::IntegrationTest
     @card_column = card_columns(:one)
   end
 
-  test "should get index" do
-    get card_columns_url
-    assert_response :success
-  end
-
   test "should get new" do
     get new_card_column_url
     assert_response :success
@@ -20,7 +15,7 @@ class CardColumnsControllerTest < ActionDispatch::IntegrationTest
       post card_columns_url, params: { card_column: { project_id: projects(:one).id, title: @card_column.title } }
     end
 
-    assert_redirected_to card_columns_url
+    assert_redirected_to @card_column.project
   end
 
   test "should show card_column" do
@@ -43,6 +38,6 @@ class CardColumnsControllerTest < ActionDispatch::IntegrationTest
       delete card_column_url(@card_column)
     end
 
-    assert_redirected_to card_columns_url
+    assert_redirected_to @card_column.project
   end
 end
