@@ -8,4 +8,7 @@
     </div>
   </div>
   <%= render card_column.cards %>
+  <div class="card">
+      <%= link_to "+ New Card", new_card_path(params: { card_column_id: card_column.id }) %>
+  </div>
 </div>

@@ -12,8 +12,7 @@
   <% end %>
 
   <div>
-    <%= form.label :card_column_id, style: "display: block" %>
-    <%= form.text_field :card_column_id %>
+    <%= form.hidden_field :card_column_id, value: params[:card_column_id] %>
   </div>
 
   <div>
