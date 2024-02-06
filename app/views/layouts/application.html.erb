@@ -11,6 +11,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <sidebar>
+      <%= link_to "Projects", projects_url %>
+    </sidebar>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
