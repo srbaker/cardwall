@@ -25,7 +25,8 @@ class CardColumnsController < ApplicationController
 
     respond_to do |format|
       if @card_column.save
-        format.html { redirect_to card_columns_url, notice: "Card column was successfully created.", data: { turbo: false } }
+        # FIXME: do I really want to redirect back to project here?
+        format.html { redirect_to @card_column.project, notice: "Card column was successfully created." }
         format.json { render :show, status: :created, location: @card_column }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -52,7 +53,7 @@ class CardColumnsController < ApplicationController
     @card_column.destroy!
 
     respond_to do |format|
-      format.html { redirect_to card_columns_url, notice: "Card column was successfully destroyed." }
+      format.html { redirect_to @card_column.project, notice: "Card column was successfully destroyed." }
       format.json { head :no_content }
     end
   end

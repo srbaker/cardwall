@@ -3,5 +3,8 @@
   <%# project.description %>
   <div id="card_columns" class="card-wall">
     <%= render project.card_columns %>
+    <%= turbo_frame_tag :new_card_column do %>
+      <%= link_to "+", new_card_column_path(params: { project_id: project.id }), data: { turbo_frame: :new_card_column } %>
+    <% end %>
   </div>
 </div>

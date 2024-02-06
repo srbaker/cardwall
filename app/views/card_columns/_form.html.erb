@@ -13,6 +13,7 @@
     <% end %>
 
     <div class="card-column-header">
+      <%= form.hidden_field :project_id, value: params[:project_id] %>
       <div class="card-column-name">
         <%= form.text_field :title, autofocus: true %>
       </div>
@@ -20,6 +21,6 @@
         <%= link_to "X", card_columns_path %>
       </div>
     </div>
-      <%= form.submit %>
+    <%= form.submit %>
   <% end %>
 </div>
