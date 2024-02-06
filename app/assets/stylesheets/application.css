@@ -69,3 +69,26 @@ body {
 .card details summary::-webkit-details-marker {
     display:none;
 }
+
+.project {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.project-card {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.project-card details > summary {
+    font-weight: bold;
+    list-style: none;
+}
+
+.project-card details summary::-webkit-details-marker {
+    display:none;
+}
