@@ -1,4 +1,4 @@
-class CardColumn < ApplicationRecord
+class Lane < ApplicationRecord
   belongs_to :project
 
   has_many :cards, dependent: :destroy

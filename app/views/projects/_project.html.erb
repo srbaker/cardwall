@@ -2,9 +2,9 @@
   <h1><%= project.title %> <%= button_to "Delete", @project, method: :delete %></h1>
   <%# project.description %>
   <div id="projects" class="card-wall">
-    <%= render project.card_columns %>
-    <%= turbo_frame_tag :new_card_column do %>
-      <%= link_to "+", new_card_column_path(params: { project_id: project.id }), data: { turbo_frame: :new_card_column } %>
+    <%= render project.lanes %>
+    <%= turbo_frame_tag :new_lane do %>
+      <%= link_to "+", new_lane_path(params: { project_id: project.id }), data: { turbo_frame: :new_lane } %>
     <% end %>
   </div>
 </div>

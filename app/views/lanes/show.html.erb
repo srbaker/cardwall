@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @lane %>
+
+<div>
+  <%= link_to "Edit this lane", edit_lane_path(@lane) %> |
+  <%= link_to "Back to lanes", lanes_path %>
+
+  <%= button_to "Destroy this lane", @lane, method: :delete %>
+</div>

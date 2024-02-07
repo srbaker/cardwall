@@ -1,16 +1,16 @@
 require "test_helper"
 
 class ProjectTest < ActiveSupport::TestCase
-  test "deleting a project deletes all of its card columns" do
+  test "deleting a project deletes all of its lanes" do
     project = projects(:one)
-    project.card_columns.create title: 'A Column'
-    project.card_columns.create title: 'Another Column'
+    project.lanes.create title: 'A Lane'
+    project.lanes.create title: 'Another Lane'
 
-    assert 2, project.card_columns.count
+    assert 2, project.lanes.count
 
     project.destroy
 
     assert 0, Project.count
-    assert 0, CardColumn.count
+    assert 0, Lane.count
   end
 end

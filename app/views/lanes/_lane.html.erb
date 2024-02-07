@@ -1,0 +1,14 @@
+<div class="card-column" id="<%= dom_id lane %>">
+  <div class="card-column-header">
+    <div class="card-column-name">
+      <%= lane.title %>
+    </div>
+    <div class="card-column-actions">
+      <%= button_to "X", lane_path(lane), method: :delete %>
+    </div>
+  </div>
+  <%= render lane.cards %>
+  <div class="card">
+      <%= link_to "+ New Card", new_card_path(params: { lane_id: lane.id }) %>
+  </div>
+</div>

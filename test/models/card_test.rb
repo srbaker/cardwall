@@ -1,19 +1,19 @@
 require "test_helper"
 
 class CardTest < ActiveSupport::TestCase
-  test "belongs to card_column" do
-    card_column = card_columns(:one)
+  test "belongs to lane" do
+    lane = lanes(:one)
 
-    card = Card.new card_column: card_column
+    card = Card.new lane: lane
 
     assert card.valid?
   end
 
-  test "must belong to card_column" do
-    card = Card.new card_column_id: nil
+  test "must belong to lane" do
+    card = Card.new lane_id: nil
 
     assert card.invalid?
-    assert card.errors.has_key? :card_column
-    assert_equal ["must exist"], card.errors[:card_column]
+    assert card.errors.has_key? :lane
+    assert_equal ["must exist"], card.errors[:lane]
   end
 end

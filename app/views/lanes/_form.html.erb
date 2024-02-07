@@ -1,11 +1,11 @@
-<div class="card-column" id="<%= dom_id card_column %>">
-  <%= form_with(model: card_column) do |form| %>
-    <% if card_column.errors.any? %>
+<div class="card-column" id="<%= dom_id lane %>">
+  <%= form_with(model: lane) do |form| %>
+    <% if lane.errors.any? %>
       <div style="color: red">
-        <h2><%= pluralize(card_column.errors.count, "error") %> prohibited this card_column from being saved:</h2>
+        <h2><%= pluralize(lane.errors.count, "error") %> prohibited this lane from being saved:</h2>
 
         <ul>
-          <% card_column.errors.each do |error| %>
+          <% lane.errors.each do |error| %>
             <li><%= error.full_message %></li>
           <% end %>
         </ul>
@@ -18,7 +18,7 @@
         <%= form.text_field :title, autofocus: true %>
       </div>
       <div class="card-column-actions">
-        <%= link_to "X", card_columns_path %>
+        <%= link_to "X", lanes_path %>
       </div>
     </div>
     <%= form.submit %>

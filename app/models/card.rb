@@ -1,4 +1,5 @@
 class Card < ApplicationRecord
-  belongs_to :card_column
+  belongs_to :lane
+
   has_rich_text :body
 end

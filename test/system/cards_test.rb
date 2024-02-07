@@ -14,7 +14,7 @@ class CardsTest < ApplicationSystemTestCase
     visit cards_url
     click_on "New card"
 
-    fill_in "Card column", with: @card.card_column_id
+    fill_in "Lane", with: @card.lane_id
     fill_in "Title", with: @card.title
     click_on "Create Card"
 
@@ -26,7 +26,7 @@ class CardsTest < ApplicationSystemTestCase
     visit card_url(@card)
     click_on "Edit this card", match: :first
 
-    fill_in "Card column", with: @card.card_column_id
+    fill_in "Lane", with: @card.lane_id
     fill_in "Title", with: @card.title
     click_on "Update Card"
 
