@@ -37,7 +37,7 @@ sidebar {
     display: flex;
 }
 
-.card-column {
+.lane {
     background: #efefef;
     border-radius: 0.5rem;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, .2);
@@ -47,20 +47,20 @@ sidebar {
     width: 20vw;
 }
 
-.card-column-header {
+.lane-header {
     display: flex;
 }
 
-.card-column-header .card-column-name {
+.lane-header .lane-name {
     font-size: 1.2rem;
     font-weight: bold;
 }
 
-.card-column-header .card-column-actions {
+.lane-header .lane-actions {
     padding-bottom: 0.75rem;
 }
 
-.card-column-header .card-column-name input[type=text] {
+.lane-header .lane-name input[type=text] {
     background: lightgray;
     border: 0;
     font-size: 1.2rem;

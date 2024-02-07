@@ -1,4 +1,4 @@
-<div class="card-column" id="<%= dom_id lane %>">
+<div class="lane" id="<%= dom_id lane %>">
   <%= form_with(model: lane) do |form| %>
     <% if lane.errors.any? %>
       <div style="color: red">
@@ -12,12 +12,12 @@
       </div>
     <% end %>
 
-    <div class="card-column-header">
+    <div class="lane-header">
       <%= form.hidden_field :project_id, value: params[:project_id] %>
-      <div class="card-column-name">
+      <div class="lane-name">
         <%= form.text_field :title, autofocus: true %>
       </div>
-      <div class="card-column-actions">
+      <div class="lane-actions">
         <%= link_to "X", lanes_path %>
       </div>
     </div>
