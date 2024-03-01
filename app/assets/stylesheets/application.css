@@ -19,15 +19,15 @@ body {
     grid-template-columns: 1fr 5fr;
     grid-template-areas:
       "sidebar content"
-      "footer  footer";
-    background: rgb(0, 212, 255);
-    font-family: Sans-Serif;
+      "sidebar  footer";
+    background: white;
+    font-family: sans-serif;
     height: 100%;
     margin: 0;
 }
 
 sidebar {
-    background: rgba(64,64,189,0.25);
+    background: lightgray;
     margin-right: 1rem;
     padding: 1rem;
 }
@@ -37,12 +37,10 @@ sidebar {
 }
 
 .lane {
-    background: #efefef;
+    border: 0.1rem solid darkgray;
     border-radius: 0.5rem;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, .2);
-    border-radius: 1rem;
     padding: 1rem;
-    margin: 0rem 1rem 0rem 0rem;
+    margin: 0 1rem 0 0;
     width: 20vw;
 }
 
@@ -67,7 +65,7 @@ sidebar {
 }
 
 .card {
-    background: white;
+    border: 0.1rem solid darkgray;
     border-radius: 0.5rem;
     padding: 0.5rem;
     margin-top: 0.5rem;
@@ -90,9 +88,8 @@ sidebar {
 }
 
 .project-card {
-    background: lightcyan;
+    border: 0.1rem solid darkgray;
     border-radius: 0.5rem;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, .2);
     padding: 0.5rem;
     margin-top: 0.5rem;
 }
