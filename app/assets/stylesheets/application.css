@@ -21,7 +21,6 @@ body {
       "sidebar content"
       "footer  footer";
     background: rgb(0, 212, 255);
-    background: linear-gradient(180deg, rgba(0, 212, 255, 1) 0%, rgba(64, 64, 189, 1) 100%) no-repeat;
     font-family: Sans-Serif;
     height: 100%;
     margin: 0;
