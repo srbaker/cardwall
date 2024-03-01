@@ -1,0 +1,6 @@
+<%= turbo_stream.append "lanes" do %>
+  <%= render @lane %>
+<% end %>
+<%= turbo_stream.replace :new_lane do %>
+  <%= link_to "+", new_lane_path(params: { project_id: @lane.project.id }), data: { turbo_frame: :new_lane } %>
+<% end %>

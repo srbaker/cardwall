@@ -20,6 +20,7 @@ class LanesController < ApplicationController
 
     respond_to do |format|
       if @lane.save
+        format.turbo_stream
         # FIXME: do I really want to redirect back to project here?
         format.html { redirect_to @lane.project, notice: "Lane was successfully created." }
       else
