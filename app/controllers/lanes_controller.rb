@@ -22,10 +22,8 @@ class LanesController < ApplicationController
       if @lane.save
         # FIXME: do I really want to redirect back to project here?
         format.html { redirect_to @lane.project, notice: "Lane was successfully created." }
-        format.json { render :show, status: :created, location: @lane }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @lane.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -34,10 +32,8 @@ class LanesController < ApplicationController
     respond_to do |format|
       if @lane.update(lane_params)
         format.html { redirect_to lane_url(@lane), notice: "Lane was successfully updated." }
-        format.json { render :show, status: :ok, location: @lane }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @lane.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -47,7 +43,6 @@ class LanesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to @lane.project, notice: "Lane was successfully destroyed." }
-      format.json { head :no_content }
     end
   end
 
