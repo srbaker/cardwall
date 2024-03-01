@@ -26,6 +26,10 @@ body {
     margin: 0;
 }
 
+turbo-frame {
+    display: flex;
+}
+
 sidebar {
     background: lightgray;
     margin-right: 1rem;
