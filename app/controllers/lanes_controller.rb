@@ -1,6 +1,10 @@
 class LanesController < ApplicationController
   before_action :set_lane, only: %i[ show edit update destroy ]
 
+  def index
+    @lanes = Lane.all
+  end
+
   # GET /lanes/1 or /lanes/1.json
   def show
   end
