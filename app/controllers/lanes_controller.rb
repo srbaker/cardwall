@@ -5,20 +5,16 @@ class LanesController < ApplicationController
     @lanes = Lane.all
   end
 
-  # GET /lanes/1 or /lanes/1.json
   def show
   end
 
-  # GET /lanes/new
   def new
     @lane = Lane.new
   end
 
-  # GET /lanes/1/edit
   def edit
   end
 
-  # POST /lanes or /lanes.json
   def create
     @lane = Lane.new(lane_params)
 
@@ -34,7 +30,6 @@ class LanesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /lanes/1 or /lanes/1.json
   def update
     respond_to do |format|
       if @lane.update(lane_params)
@@ -47,7 +42,6 @@ class LanesController < ApplicationController
     end
   end
 
-  # DELETE /lanes/1 or /lanes/1.json
   def destroy
     @lane.destroy!
 
@@ -59,12 +53,10 @@ class LanesController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_lane
     @lane = Lane.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def lane_params
     params.require(:lane).permit(:title, :project_id)
   end
