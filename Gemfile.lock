@@ -105,6 +105,8 @@ GEM
     ffi (1.16.3)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    heroicon (1.0.0)
+      rails (>= 5.2)
     high_voltage (3.1.2)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
@@ -271,6 +273,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  heroicon (~> 1.0)
   high_voltage (~> 3.1)
   image_processing (~> 1.2)
   importmap-rails
