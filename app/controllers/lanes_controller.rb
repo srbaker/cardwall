@@ -43,6 +43,7 @@ class LanesController < ApplicationController
     @lane.destroy!
 
     respond_to do |format|
+      format.turbo_stream
       format.html { redirect_to @lane.project, notice: "Lane was successfully destroyed." }
     end
   end
