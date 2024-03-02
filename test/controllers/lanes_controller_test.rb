@@ -30,7 +30,7 @@ class LanesControllerTest < ActionDispatch::IntegrationTest
 
   test "should update lane" do
     patch lane_url(@lane), params: { lane: { title: @lane.title } }
-    assert_redirected_to lane_url(@lane)
+    assert_response :ok
   end
 
   test "should destroy lane" do

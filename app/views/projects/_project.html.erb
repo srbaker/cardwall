@@ -2,7 +2,7 @@
   <h1><%= project.title %> <%= link_to heroicon("trash", variant: :outline, options: { style: "color: red; width: 0.5em; height: 0.5em;" }), @project, method: :delete %></h1>
   <%# project.description %>
   <div id="projects" class="card-wall">
-    <%= turbo_frame_tag "lanes", src: lanes_path, data: { controller: "drag-drop" } %>
+    <%= turbo_frame_tag "lanes", src: lanes_path(project_id: project.id), data: { controller: "drag-drop" } %>
     <%= turbo_frame_tag :new_lane do %>
       <%= link_to "+", new_lane_path(params: { project_id: project.id }), data: { turbo_frame: :new_lane } %>
     <% end %>

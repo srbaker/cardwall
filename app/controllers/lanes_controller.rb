@@ -2,7 +2,11 @@ class LanesController < ApplicationController
   before_action :set_lane, only: %i[ show edit update destroy ]
 
   def index
-    @lanes = Lane.all
+    if params.has_key? :project_id
+      @lanes = Project.find(params[:project_id]).lanes
+    else
+      @lanes = Lane.all
+    end
   end
 
   def show
@@ -32,7 +36,7 @@ class LanesController < ApplicationController
   def update
     respond_to do |format|
       if @lane.update(lane_params)
-        format.html { redirect_to lane_url(@lane), notice: "Lane was successfully updated." }
+        format.html { head :ok, notice: "Lane was successfully updated." }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -55,6 +59,6 @@ class LanesController < ApplicationController
   end
 
   def lane_params
-    params.require(:lane).permit(:title, :project_id)
+    params.require(:lane).permit(:title, :project_id, :position)
   end
 end
