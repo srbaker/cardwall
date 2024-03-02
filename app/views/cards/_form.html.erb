@@ -1,31 +1,29 @@
-<%= form_with(model: card) do |form| %>
-  <% if card.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(card.errors.count, "error") %> prohibited this card from being saved:</h2>
-
-      <ul>
-        <% card.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<div class="card" id="<%= dom_id card %>">
   <div>
-    <%= form.hidden_field :lane_id, value: params[:lane_id] %>
-  </div>
+    <%= form_with(model: card) do |form| %>
+      <% if card.errors.any? %>
+        <div style="color: red">
+          <h2><%= pluralize(card.errors.count, "error") %> prohibited this card from being saved:</h2>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
+          <ul>
+            <% card.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-  <div>
-    <%= form.label :body, style: "display: block" %>
-    <%= form.rich_text_area :body %>
-  </div>
+      <div>
+        <%= form.hidden_field :lane_id, value: params[:lane_id] %>
+      </div>
 
-  <div>
-    <%= form.submit %>
+      <div>
+        <%= form.text_field :title %>
+      </div>
+
+      <div>
+        <%= form.submit %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
