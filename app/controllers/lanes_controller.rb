@@ -3,7 +3,8 @@ class LanesController < ApplicationController
 
   def index
     if params.has_key? :project_id
-      @lanes = Project.find(params[:project_id]).lanes
+      @project = Project.find(params[:project_id])
+      @lanes = @project.lanes
     else
       @lanes = Lane.all
     end

@@ -7,8 +7,8 @@
       <%= button_to heroicon("trash", variant: :outline, options: { style: "color: red; width: 1em; height: 1em;" }), lane, method: :delete %>
     </div>
   </div>
-  <%= turbo_frame_tag "cards", src: cards_path(lane_id: lane.id), class: "cards", data: { controller: "drag-drop" } %>
-  <%= turbo_frame_tag :new_card do %>
-    <%= link_to "+", new_card_path(params: { lane_id: lane.id }), data: { turbo_frame: :new_card } %>
+  <%= turbo_frame_tag dom_id(lane, :cards), src: cards_path(lane_id: lane.id), class: "cards", data: { controller: "drag-drop" } %>
+  <%= turbo_frame_tag dom_id(lane, :new_card) do %>
+    <%= link_to "+", new_card_path(params: { lane_id: lane.id }), data: { turbo_frame: dom_id(lane, :new_card) } %>
   <% end %>
 </div>

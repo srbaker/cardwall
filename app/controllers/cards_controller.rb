@@ -3,7 +3,8 @@ class CardsController < ApplicationController
 
   def index
     if params.has_key? :lane_id
-      @cards = Lane.find(params[:lane_id]).cards
+      @lane = Lane.find(params[:lane_id])
+      @cards = @lane.cards
     else
       @cards = Card.all
     end
@@ -13,7 +14,13 @@ class CardsController < ApplicationController
   end
 
   def new
-    @card = Card.new
+    # FIXME: this should require a :lane_id
+    if params.has_key? :lane_id
+      @lane = Lane.find(params[:lane_id])
+      @card = Card.new(lane: @lane)
+    else
+      @card = Card.find(params[:id])
+    end
   end
 
   def edit

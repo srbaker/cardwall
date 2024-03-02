@@ -1,8 +1,8 @@
-<%= turbo_stream.append "cards" do %>
+<%= turbo_stream.append dom_id(@card.lane, :cards) do %>
   <%= render @card %>
 <% end %>
-<%= turbo_stream.replace :new_card do %>
-  <%= turbo_frame_tag :new_card do %>
-    <%= link_to "+", new_card_path(params: { lane_id: @card.lane_id }), data: { turbo_frame: :new_card } %>
+<%= turbo_stream.replace dom_id(@card.lane, :new_card) do %>
+  <%= turbo_frame_tag dom_id(@card.lane, :new_card) do %>
+    <%= link_to "+", new_card_path(params: { lane_id: @card.lane.id }), data: { turbo_frame: dom_id(@card.lane, :new_card) } %>
   <% end %>
 <% end %>
