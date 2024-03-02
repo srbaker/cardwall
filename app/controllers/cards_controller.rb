@@ -2,7 +2,11 @@ class CardsController < ApplicationController
   before_action :set_card, only: %i[ show edit update destroy ]
 
   def index
-    @cards = Card.all
+    if params.has_key? :lane_id
+      @cards = Lane.find(params[:lane_id]).cards
+    else
+      @cards = Card.all
+    end
   end
 
   def show
@@ -46,11 +50,12 @@ class CardsController < ApplicationController
   end
 
   private
-    def set_card
-      @card = Card.find(params[:id])
-    end
 
-    def card_params
-      params.require(:card).permit(:lane_id, :title, :body)
-    end
+  def set_card
+    @card = Card.find(params[:id])
+  end
+
+  def card_params
+    params.require(:card).permit(:lane_id, :title, :body)
+  end
 end
