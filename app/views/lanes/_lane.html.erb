@@ -4,7 +4,7 @@
       <%= lane.title %>
     </div>
     <div class="lane-actions">
-      <%= link_to heroicon("trash", variant: :outline, options: { style: "color: red; width: 1em; height: 1em;" }), lane, method: :delete %>
+      <%= button_to heroicon("trash", variant: :outline, options: { style: "color: red; width: 1em; height: 1em;" }), lane, method: :delete %>
     </div>
   </div>
   <%= turbo_frame_tag "cards", src: cards_path(lane_id: lane.id), class: "cards", data: { controller: "drag-drop" } %>
