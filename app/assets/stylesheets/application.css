@@ -69,6 +69,11 @@ sidebar {
     font-weight: bold;
 }
 
+.cards {
+    display: flex;
+    flex-direction: column;
+}
+
 .card {
     border: 0.1rem solid darkgray;
     border-radius: 0.5rem;
