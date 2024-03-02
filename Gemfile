@@ -33,3 +33,5 @@ gem "high_voltage", "~> 3.1"
 gem "heroicon", "~> 1.0"
 
 gem "acts_as_list", "~> 1.1"
+
+gem "requestjs-rails", "~> 0.0.11"
