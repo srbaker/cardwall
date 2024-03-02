@@ -2,25 +2,16 @@ class CardsController < ApplicationController
   before_action :set_card, only: %i[ show edit update destroy ]
 
   def index
-    if params.has_key? :lane_id
-      @lane = Lane.find(params[:lane_id])
-      @cards = @lane.cards
-    else
-      @cards = Card.all
-    end
+    @lane = Lane.find(params[:lane_id])
+    @cards = @lane.cards
   end
 
   def show
   end
 
   def new
-    # FIXME: this should require a :lane_id
-    if params.has_key? :lane_id
-      @lane = Lane.find(params[:lane_id])
-      @card = Card.new(lane: @lane)
-    else
-      @card = Card.find(params[:id])
-    end
+    @lane = Lane.find(params[:lane_id])
+    @card = Card.new(lane: @lane)
   end
 
   def edit
