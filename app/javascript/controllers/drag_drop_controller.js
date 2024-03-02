@@ -1,4 +1,5 @@
-import { Controller } from "@hotwired/stimulus"
+import {Controller} from "@hotwired/stimulus"
+import {patch} from '@rails/request.js'
 import Sortable from "sortablejs"
 
 export default class extends Controller {
@@ -9,18 +10,12 @@ export default class extends Controller {
         })
     }
 
-    end(event) {
+    async end(event) {
         let id = event.item.dataset.id;
-        let data = new FormData();
-        data.append("position", event.newIndex + 1);
-
-        console.log(`dragged lane ${id} to position ${event.newIndex + 1}`);
-
         let url = event.item.dataset.url.replace(":id", id);
-        Rails.ajax.request({
-            url: url,
-            type: 'PATCH',
-            data: data
-        });
+        const formData = new FormData();
+        formData.append('lane[position]', event.newIndex + 1);
+
+        await patch(url, {body: formData} );
     }
 }
