@@ -2,12 +2,8 @@ class LanesController < ApplicationController
   before_action :set_lane, only: %i[ show edit update destroy ]
 
   def index
-    if params.has_key? :project_id
-      @project = Project.find(params[:project_id])
-      @lanes = @project.lanes
-    else
-      @lanes = Lane.all
-    end
+    @project = Project.find(params[:project_id])
+    @lanes = @project.lanes
   end
 
   def show
