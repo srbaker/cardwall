@@ -7,8 +7,10 @@
       <%= button_to "X", lane_path(lane), method: :delete %>
     </div>
   </div>
-  <%= render lane.cards %>
-  <div class="card">
+  <div class="cards" data-controller="drag-and-drop">
+    <%= render lane.cards %>
+    <div class="card">
       <%= link_to "+ New Card", new_card_path(params: { lane_id: lane.id }) %>
+    </div>
   </div>
 </div>
