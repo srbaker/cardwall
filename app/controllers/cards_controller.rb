@@ -24,6 +24,7 @@ class CardsController < ApplicationController
 
     respond_to do |format|
       if @card.save
+        format.turbo_stream
         format.html { redirect_to card_url(@card), notice: "Card was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
