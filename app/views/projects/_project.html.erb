@@ -1,5 +1,5 @@
 <div id="<%= dom_id project %>">
-  <h1><%= project.title %> <%= button_to "Delete", @project, method: :delete %></h1>
+  <h1><%= project.title %> <%= link_to heroicon("trash", variant: :outline, options: { style: "color: red; width: 0.5em; height: 0.5em;" }), @project, method: :delete %></h1>
   <%# project.description %>
   <div id="projects" class="card-wall">
     <%= turbo_frame_tag "lanes", src: lanes_path, data: { controller: "drag-and-drop" } %>
