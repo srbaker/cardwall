@@ -2,7 +2,8 @@ service: cardwall
 image: srbaker/cardwall
 
 servers:
-  - 135.181.250.235
+  web:
+    - 135.181.250.235
 
 registry:
   username: srbaker
