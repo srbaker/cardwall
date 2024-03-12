@@ -1,4 +1,4 @@
-<div id="<%= dom_id card %>" class="card">
+<div id="<%= dom_id card %>" class="card" data-id="<%= card.id %>" data-url="/cards/:id" data-resource="card">
   <details>
     <summary>
       <span><%= card.title %> <%= card.body.blank? ? "" : "📄" %><%= button_to heroicon("trash", variant: :outline, options: { style: "color: red; width: 1em; height: 1em;" }), card, method: :delete %></span>

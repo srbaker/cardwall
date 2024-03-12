@@ -33,7 +33,7 @@ class CardsController < ApplicationController
   def update
     respond_to do |format|
       if @card.update(card_params)
-        format.html { redirect_to card_url(@card), notice: "Card was successfully updated." }
+        format.html { head :ok, notice: "Card was successfully updated." }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -56,6 +56,6 @@ class CardsController < ApplicationController
   end
 
   def card_params
-    params.require(:card).permit(:lane_id, :title, :body)
+    params.require(:card).permit(:lane_id, :title, :body, :position)
   end
 end
