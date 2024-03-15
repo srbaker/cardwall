@@ -35,3 +35,5 @@ gem "heroicon", "~> 1.0"
 gem "acts_as_list", "~> 1.1"
 
 gem "requestjs-rails", "~> 0.0.11"
+
+gem "devise", "~> 4.9"
