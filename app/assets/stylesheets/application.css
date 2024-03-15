@@ -33,6 +33,7 @@ body {
     font-family: sans-serif;
     height: 100%;
     margin: 0;
+    padding: 1rem;
 }
 
 /* FIXME: put this in a class, and put it on all of the turbo frames; the class name should be turbo-flex */
