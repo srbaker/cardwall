@@ -102,6 +102,12 @@ main {
     padding: 0.65rem;
 }
 
+.card .card-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
 .card .card-title {
     margin: 0;
     font-size: 1rem;
