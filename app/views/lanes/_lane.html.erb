@@ -9,6 +9,8 @@
   </div>
   <%= turbo_frame_tag dom_id(lane, :cards), src: cards_path(lane_id: lane.id), class: "cards", data: { controller: "drag-drop", group: "cards", group_field: 'lane_id', group_id: lane.id } %>
   <%= turbo_frame_tag dom_id(lane, :new_card) do %>
-    <%= link_to "+", new_card_path(params: { lane_id: lane.id }), data: { turbo_frame: dom_id(lane, :new_card) } %>
+    <%= link_to new_card_path(params: { lane_id: lane.id }), data: { turbo_frame: dom_id(lane, :new_card) } do %>
+      <%= heroicon("plus", variant: :outline, options: { style: "color: teal; width: 1em; height: 1em;" }) %>
+    <% end %>
   <% end %>
 </div>
