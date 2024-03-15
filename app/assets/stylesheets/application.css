@@ -108,6 +108,18 @@ main {
     gap: 0.5rem;
 }
 
+.card .card-header button {
+    appearance: none;
+    background: none;
+    border: none;
+    paddding: none;
+    cursor: pointer;
+}
+
+.card .card-header button:hover {
+    opacity: 50%;
+}
+
 .card .card-title {
     margin: 0;
     font-size: 1rem;
