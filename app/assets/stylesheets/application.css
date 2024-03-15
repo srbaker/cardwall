@@ -62,7 +62,16 @@ main {
 }
 
 .lane-header .lane-name {
+    display: flex;
+    gap: 0.5rem;
     font-weight: bold;
+    align-items: baseline;
+}
+
+.lane-header .lane-count {
+    font-size: 0.875rem;
+    color: var(--body-muted-color);
+    font-weight: normal;
 }
 
 .lane-header .lane-actions {
