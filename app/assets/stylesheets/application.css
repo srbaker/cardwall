@@ -91,6 +91,28 @@ main {
     font-weight: bold;
 }
 
+.lane .lane-add-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    color: teal;
+    font-size: 0.875rem;
+    padding-top: 0.5rem;
+    gap: 0.25rem;
+}
+
+.lane .lane-add-card svg {
+    padding: 0.075rem;
+    border-radius: 100%;
+}
+
+.lane .lane-add-card:hover svg {
+    background-color: teal;
+    fill: red;
+    stroke: white;
+}
+
 .cards {
     display: flex;
     flex-direction: column;

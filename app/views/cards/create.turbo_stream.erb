@@ -3,6 +3,9 @@
 <% end %>
 <%= turbo_stream.replace dom_id(@card.lane, :new_card) do %>
   <%= turbo_frame_tag dom_id(@card.lane, :new_card) do %>
-    <%= link_to "+", new_card_path(params: { lane_id: @card.lane.id }), data: { turbo_frame: dom_id(@card.lane, :new_card) } %>
+    <%= link_to new_card_path(params: { lane_id: @card.lane.id }), class: "lane-add-card", data: { turbo_frame: dom_id(@card.lane, :new_card) } do %>
+      <%= heroicon("plus", variant: :outline, options: { style: "color: teal; width: 1em; height: 1em;" }) %>
+      <span class="lane-add-card-label">Add Card</span>
+    <% end %>
   <% end %>
 <% end %>
