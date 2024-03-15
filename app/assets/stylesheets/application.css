@@ -26,7 +26,7 @@ body {
     margin: 0;
 }
 
-/* FIXME: put this in a class, and put it on all of the turbo frames */
+/* FIXME: put this in a class, and put it on all of the turbo frames; the class name should be turbo-flex */
 turbo-frame {
     display: flex;
 }
@@ -42,7 +42,7 @@ sidebar {
 }
 
 .lane {
-    border: 0.1rem solid darkgray;
+    /*border: 0.1rem solid darkgray;*/
     border-radius: 0.5rem;
     padding: 1rem;
     margin: 0 1rem 0 0;
