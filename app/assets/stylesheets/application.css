@@ -31,10 +31,9 @@ turbo-frame {
     display: flex;
 }
 
-sidebar {
-    background: lightgray;
-    margin-right: 1rem;
-    padding: 1rem;
+main {
+    display: flex;
+    width: 100vw;
 }
 
 .card-wall {
