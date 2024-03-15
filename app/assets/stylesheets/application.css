@@ -20,6 +20,7 @@
     --body-muted-color: #A8A29E;
     --card-outline-color: #D6D3D1;
     --card-outline-hover-color: #A8A29E;
+    --new-lane-background-color: #F5F5F4;
 }
 
 body {
@@ -46,7 +47,7 @@ main {
     width: 100vw;
 }
 
-.card-wall {
+.lanes {
     display: flex;
 }
 
@@ -109,6 +110,32 @@ main {
 }
 
 .lane .lane-add-card:hover svg {
+    background-color: teal;
+    fill: red;
+    stroke: white;
+}
+
+.lanes .project-add-lane {
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    text-decoration: none;
+    color: teal;
+    font-size: 0.875rem;
+    padding-top: 0.5rem;
+    gap: 0.25rem;
+    width: 20vw;
+    background-color: var(--new-lane-background-color);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+.lanes .project-add-lane svg {
+    padding: 0.075rem;
+    border-radius: 100%;
+}
+
+.lanes .project-add-lane:hover svg {
     background-color: teal;
     fill: red;
     stroke: white;
