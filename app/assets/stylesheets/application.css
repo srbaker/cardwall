@@ -14,13 +14,22 @@
  *= require_self
  */
 
+:root {
+    --bg-color: #FAFAF9;
+    --body-copy-color: #0C0A09;
+    --body-muted-color: #1C1917;
+    --card-outline-color: #D6D3D1;
+    --card-outline-hover-color: #A8A29E;
+}
+
 body {
+    background-color: var(--bg-color);
+    color: var(--body-copy-color);
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-areas:
       "sidebar content"
       "sidebar  footer";
-    background: white;
     font-family: sans-serif;
     height: 100%;
     margin: 0;
@@ -41,7 +50,6 @@ main {
 }
 
 .lane {
-    /*border: 0.1rem solid darkgray;*/
     border-radius: 0.5rem;
     padding: 1rem;
     margin: 0 1rem 0 0;
@@ -50,10 +58,10 @@ main {
 
 .lane-header {
     display: flex;
+    justify-content: space-between;
 }
 
 .lane-header .lane-name {
-    font-size: 1.2rem;
     font-weight: bold;
 }
 
@@ -74,10 +82,14 @@ main {
 }
 
 .card {
-    border: 0.1rem solid darkgray;
+    border: 0.1rem solid var(--card-outline-color);
     border-radius: 0.5rem;
-    padding: 0.5rem;
+    padding: 0.65rem;
     margin-top: 0.5rem;
+}
+
+.card:hover {
+    border-color: var(--card-outline-hover-color);
 }
 
 .card details > summary {
