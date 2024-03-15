@@ -50,10 +50,15 @@ main {
 }
 
 .lane {
-    border-radius: 0.5rem;
+    border-radius: 0.575rem;
     padding: 1rem;
     margin: 0 1rem 0 0;
     width: 20vw;
+}
+
+.lane:hover {
+    border: 1px solid var(--card-outline-color);
+    border-radius: 0.5rem;
 }
 
 .lane-header {
@@ -88,13 +93,25 @@ main {
 .cards {
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
 }
 
 .card {
     border: 0.1rem solid var(--card-outline-color);
     border-radius: 0.5rem;
     padding: 0.65rem;
-    margin-top: 0.5rem;
+}
+
+.card .card-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.card .trix-content {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--body-muted-color);
 }
 
 .card:hover {
