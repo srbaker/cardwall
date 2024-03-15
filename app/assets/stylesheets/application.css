@@ -26,7 +26,7 @@ body {
     margin: 0;
 }
 
-/* FIXME: I really, really hate this.  But turbo-frame messes up my flex layouts. */
+/* FIXME: put this in a class, and put it on all of the turbo frames */
 turbo-frame {
     display: flex;
 }
