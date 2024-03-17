@@ -6,12 +6,9 @@ servers:
     hosts:
       - 135.181.250.235
     labels:
-      traefik.http.routers.cardwall.rule: Host(`cardwall.srbaker.org`)
       traefik.http.routers.cardwall_secure.entrypoints: websecure
       traefik.http.routers.cardwall_secure.rule: Host(`cardwall.srbaker.org`)
-      traefik.http.routers.cardwall_secure.tls: true
       traefik.http.routers.cardwall_secure.tls.certresolver: letsencrypt
-
 
 registry:
   username: srbaker
@@ -31,6 +28,9 @@ traefik:
   args:
     entryPoints.web.address: ":80"
     entryPoints.websecure.address: ":443"
+    entryPoints.web.http.redirections.entryPoint.to: websecure
+    entryPoints.web.http.redirections.entryPoint.scheme: https
+    entryPoints.web.http.redirections.entrypoint.permanent: true
     certificatesResolvers.letsencrypt.acme.email: "steven@stevenrbaker.com"
     certificatesResolvers.letsencrypt.acme.storage: "/letsencrypt/acme.json"
     certificatesResolvers.letsencrypt.acme.httpchallenge: true
