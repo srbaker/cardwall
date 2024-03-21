@@ -6,12 +6,12 @@ class CardsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get cards_url
+    get cards_url, params: { lane_id: @card.lane.id }
     assert_response :success
   end
 
   test "should get new" do
-    get new_card_url
+    get new_card_url, params: { lane_id: @card.lane.id }
     assert_response :success
   end
 
@@ -35,7 +35,7 @@ class CardsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update card" do
     patch card_url(@card), params: { card: { lane_id: @card.lane_id, title: @card.title } }
-    assert_redirected_to card_url(@card)
+    assert_response :success
   end
 
   test "should destroy card" do
